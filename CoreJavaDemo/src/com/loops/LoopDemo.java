@@ -31,8 +31,6 @@ public class LoopDemo {
 		// find power of base to number base = 2, power = 3
 		// 2^3 = 8
 		
-	
-
 		int value = 1;
 		int base = 2, power = 5;
 //		while (i<=power) {
@@ -52,8 +50,8 @@ public class LoopDemo {
 		// take a no as input and i need to count the number of times it is divisible by 2
 		// 20 => 1, 10=> 2, 5
 		// 24 => 1, 12=> 2, 6=> 3, 3
-		System.out.println("enter a no");
-		int no = sc.nextInt(); // 20
+		//System.out.println("enter a no");
+		//int no = sc.nextInt(); // 20
 //		int c= 0;
 //		while(no % 2==0) // unfixed iterations
 //		{
@@ -61,11 +59,11 @@ public class LoopDemo {
 //			no= no/2;//5
 //		}
 //		System.out.println(c);
-		int c= 0;
-		for (; no%2==0; no/=2) // fixed iterations
-			c++;
-		System.out.println(c);
-		
+//		int c= 0;
+//		for (; no%2==0; no/=2) // fixed iterations
+//			c++;
+//		System.out.println(c);
+//		
 		int s = 0; // start, we want to execute atleast once
 		do {
 			System.out.println(s*s);
@@ -84,11 +82,20 @@ public class LoopDemo {
 		 * Once user enters a 2-digit number,
 		 * print if both the digits are same or not 
 		 */
+		int num =0;
+		
+		do {
+			System.out.println("enter a 2-digit number please!!");
+			 num = sc.nextInt();
+		}while(num < 10 || num > 99);
+		
+		System.out.println(num % 11==0? "Same digits":"Diff digits");
 		d=1;
 		do {
 			System.out.println('*');
 			d++;
 		}while(d<1);
+		
 	}
 
 }
