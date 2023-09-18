@@ -18,26 +18,46 @@ public class CustomerConstructor {
 	// which takes no input/parameters => default constructor
 	// if there is no constructor in the class, compiler creates one
 	// constructor overloading / method overloading
-	public CustomerConstructor() {
-		System.out.println("Default Contructor called");
-		city = "Mumbai";
-	}
-	public CustomerConstructor(String n, String e, String c, char g) {
-		System.out.println("Parameterized constructor Contructor called");
-		name = n;
-		email = e;
-		city = c;
-		gender = g;
-	}
-	public CustomerConstructor(String n, String e,  char g) {
-		System.out.println("Parameterized constructor Contructor called");
-		name = n;
-		email = e;
-		gender = g;
+//	public CustomerConstructor() {
+//		System.out.println("Default Contructor called");
+//		city = "Mumbai";
+//	}
+	// local variables
+	/**
+	 * this keyword => represents the current object
+	 * 
+	 */
+//	public CustomerConstructor(String name, String email, String city, char gender) {
+//		// this is of type Customer
+//		// Customer this = c2 , c3
+//		System.out.println(this);
+//		System.out.println("Parameterized constructor Contructor called");
+//		this.name = name;
+//		this.email = email;
+//		this.city = city;
+//		this.gender = gender;
+//	}
+	//c2
+//	public CustomerConstructor(String n, String e, char g) {
+//		this(); // calling a constructor that takes no parameters
+//		System.out.println("Parameterized constructor Contructor called");
+//		name = n;
+//		email = e;
+//		gender = g;
+//		this.setSalutation();
+//	}
+	private void setSalutation()
+	{
+		if(this.gender=='M')
+			this.name="Mr "+name;
+		else
+			name="Ms "+name;
 	}
 	
 	public void display()
 	{
-		System.out.println(name+" "+email+" "+city);
+		// this => current object 
+		// this is implicit
+		System.out.println(this.name+" "+email+" "+city);
 	}
 }
