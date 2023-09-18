@@ -6,6 +6,7 @@ public class LoopDemo {
 
 	public static void main(String[] args) {
 		
+		
 		// print square of numbers 1 to 5
 		// repeat => loops
 		// for, while and do-while
