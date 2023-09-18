@@ -62,6 +62,7 @@ public class Customer {
 		else
 			name="Ms "+nm;
 	}
+	// signature
 	void setData(String nm, String em, char g)
 	// methods => 
 	{

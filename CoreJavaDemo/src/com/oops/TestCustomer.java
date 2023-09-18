@@ -5,32 +5,48 @@ import java.util.Scanner;
 public class TestCustomer {
 
 	// static methods can be directly called from other static methods
+	// input()
+	//input()
+	// to create new customers with their data
 	public static Customer input() {
+		// form on the webpage
 		Scanner sc = new Scanner(System.in);
 		System.out.println("enter name");
-		
-		String name = sc.next();
+		String name = sc.next();//het
+		System.out.println("enter city");
 		String city = sc.next();
+		System.out.println("enter email");
 		String email = sc.next();
+		System.out.println("enter gender");
 		char gender = sc.next().charAt(0);
 		Customer customer = new Customer();
-		customer.setData(name, email, city , gender);
+		//customer.name = name;
+		customer.setData(name, email , gender);
 		return customer;
 	}
 
+	public static void display(Customer customer)
+	{
+		System.out.println("********************************************************");
+		System.out.println("Name : "+customer.name+"\nCity : "+customer.city+"\nEmail : "+customer.email+"\nGender : "+customer.gender);
+		System.out.println("********************************************************\n");
+	}
 	public static void main(String[] args) {
 		System.out.println("Enter data for customer 1");
-		Customer c1 = input();
+		Customer c1 = input(); // creates customer 1
+		System.out.println(c1);
 		System.out.println("Enter data for customer 2");
-		Customer c2 = input();
+		Customer c2 = input();// creates customer 2
+		display(c2);
+		
+		display(c1);
+		
 //		c1.display();
 //		c2.display();
 		// send to database
-		System.out.println(c1.display());
-		String s = c2.display();
-		System.out.println(s);
-		
-		
+//		System.out.println(c1.display());
+//		String s = c2.display();
+//		System.out.println(s);
 	}
 	// UI => console, desktop, web , mobile, appn
 //	public static void main(String[] args) {
@@ -49,6 +65,7 @@ public class TestCustomer {
 ////		c1.email ="shalini@gmail.com";
 ////		c1.gender='F';
 ////		c1.city ="Mumbai";
+	
 //		System.out.println(c1);
 //		// c2 => 
 //		Customer c2;
