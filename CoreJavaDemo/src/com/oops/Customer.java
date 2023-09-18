@@ -26,10 +26,12 @@ import java.util.Scanner;
 public class Customer {
 	// attributes or characteristics data members, adjectives
 	// instance variables
-	String name;
-	String email;
-	char gender;
-	String city;
+	// access specifiers => private, public, protected, default access level
+	// data memebrs should be private
+	private String name;
+	private String email;
+	private char gender;
+	private String city;
 	/**
 	 * <access specifier>  <return type> <methodname>(){
 	 * 	//body
@@ -51,29 +53,41 @@ public class Customer {
 //		Scanner sc = new Scanner(System.in);
 //		name = sc.next();
 //	}
-	void setData(String nm, String em, String c, char g)
+	// member method => public
+	public void setData(String nm, String em, String c, char g)
 	// methods => 
 	{
 		email =em;
 		gender=g;
 		city =c;
-		if(gender=='M')
-			name="Mr "+nm;
-		else
-			name="Ms "+nm;
+		name = nm;
+		setSalutation();
 	}
 	// signature
-	void setData(String nm, String em, char g)
+	public void setData(String nm, String em, char g)
 	// methods => 
 	{
 		email =em;
 		gender=g;
 		city ="N/A";
-		if(gender=='M')
-			name="Mr "+nm;
-		else
-			name="Ms "+nm;
+		name = nm;
+		setSalutation();
+		
 	}
+	private void setSalutation()
+	{
+		if(gender=='M')
+			name="Mr "+name;
+		else
+			name="Ms "+name;
+	}
+	
+	public void setName(String nm)
+	{
+		name = nm;
+		setSalutation();
+	}
+	
 //	void display()
 //	{
 //		System.out.println("********************************************************");

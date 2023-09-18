@@ -25,21 +25,28 @@ public class TestCustomer {
 		return customer;
 	}
 
-	public static void display(Customer customer)
-	{
-		System.out.println("********************************************************");
-		System.out.println("Name : "+customer.name+"\nCity : "+customer.city+"\nEmail : "+customer.email+"\nGender : "+customer.gender);
-		System.out.println("********************************************************\n");
-	}
+//	public static void display(Customer customer)
+//	{
+//		System.out.println("********************************************************");
+//		System.out.println("Name : "+customer.name+"\nCity : "+customer.city+"\nEmail : "+customer.email+"\nGender : "+customer.gender);
+//		System.out.println("********************************************************\n");
+//	}
 	public static void main(String[] args) {
 		System.out.println("Enter data for customer 1");
 		Customer c1 = input(); // creates customer 1
 		System.out.println(c1);
 		System.out.println("Enter data for customer 2");
 		Customer c2 = input();// creates customer 2
-		display(c2);
 		
-		display(c1);
+//		display(c2);
+//		
+//		display(c1);
+		System.out.println(c1.display());
+		System.out.println(c2.display());
+		//c1.name="Sheetal";
+		c1.setName("Sheetal");
+		System.out.println(c1.display());
+		//display(c1);
 		
 //		c1.display();
 //		c2.display();

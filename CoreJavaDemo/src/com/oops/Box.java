@@ -9,11 +9,22 @@ package com.oops;
  * display() => displays the dimensions of a box
  * w x h x l
  * 2 x 3 x 5
- * 
- * 
- * @author Shalini
- *
  */
 public class Box {
 
+	int width, height, length;
+	void initialize(int w, int h, int l)
+	{
+		height=h;
+		width = w;
+		length = l;
+	}
+	int volume()
+	{
+		return height*width*length;
+	}
+	void display()
+	{
+		System.out.println(width+"x"+height+"x"+length);
+	}
 }
