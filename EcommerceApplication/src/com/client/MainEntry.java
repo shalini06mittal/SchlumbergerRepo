@@ -13,8 +13,7 @@ public class MainEntry {
 		System.out.println("2. Update Product");
 		System.out.println("3. Get Product");
 		System.out.println("4. Purchase Product");
-		System.out.println("5. Find Product By Brands");
-		
+		System.out.println("5. Find Product By Brands");	
 	}
 	public static void main(String[] args) {
 		/*
@@ -30,7 +29,7 @@ public class MainEntry {
 		 * 	Ask the user which product to purchase and continue asking
 		 * 	until user says no. Then display the total amount to pay 
 		 * 	5. Display all products by brands
-		 * 	ask the user to enter the brand and display all the products by brand 
+		 * 		ask the user to enter the brand and display all the products by brand 
 		 */
 		ProductDatabase database = new ProductDatabase();
 		Scanner sc = new Scanner(System.in);
@@ -41,14 +40,16 @@ public class MainEntry {
 		switch(choice) {
 		case 1:
 			products = database.getAllProducts();
+			System.out.println(products.length);
 			if(products.length>0) {
-				System.out.println("SNO\tName\t\tPrice\tBrand\t\tDescription");
+				System.out.println("SNO\tName\t\tPrice\t\tBrand\t\tDescription");
 				for (Product product:products) {
 					System.out.print(product.getProductId()+"\t");
-					System.out.print(product.getProdname()+"\t\t");
+					System.out.print(product.getProdname()+"\t");
 					System.out.print(product.getPrice()+"\t");
-					System.out.print(product.getBrand()+"\t\t");
+					System.out.print(product.getBrand().getBrandname()+"\t\t");
 					System.out.print(product.getDescription()+"\t");
+					System.out.println();
 				}
 			}
 			break;

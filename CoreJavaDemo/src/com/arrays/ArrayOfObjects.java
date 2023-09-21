@@ -39,8 +39,14 @@ public class ArrayOfObjects {
 		{
 			System.out.println(data*data*data);
 		}
-		for(Student student : students)
-			System.out.println(student);
+		for(Student student : students) {
+			if(student.getRno() == s1.getRno())
+			{
+				System.out.println(student);
+				break;
+			}
+		}
+			
 		
 		s1 = new Student(1, "Shalini Mittal");
 		for(int i = 0; i < students.length; i++) {
