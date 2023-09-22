@@ -15,6 +15,9 @@ public class LoginServcie {
 	{
 		// call findCutomerbyEmail of customer database
 		// validate the customer for credentials
-		return true;
+		String pwd = customerDatabase.findCustomerByEmail(email);
+		if(pwd != null && pwd.equals(password))
+			return true;
+		return false;
 	}
 }
