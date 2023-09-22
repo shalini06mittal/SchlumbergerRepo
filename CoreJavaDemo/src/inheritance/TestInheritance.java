@@ -2,8 +2,10 @@ package inheritance;
 
 public class TestInheritance {
 
+	
+	
 	public static void main(String[] args) {
-//		Item item1 = new Item();
+		//Item item1 = new Item();
 		Book b1 = new Book(1,"some desc",234, "some title");
 		System.out.println(b1.getTitle());
 		System.out.println(b1.getPrice());
@@ -14,6 +16,10 @@ public class TestInheritance {
 //		b1.setPrice(240);
 //		b1.setTitle("some title");
 //		System.out.println(b1.getTitle());
+		
+		Item obj = new Book();
+		obj.calculateMrp();
+		obj = new Rap();
 		
 	}
 }

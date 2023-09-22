@@ -16,6 +16,7 @@ public class MainEntry {
 		System.out.println("5. Find Product By Brands");	
 	}
 	public static void main(String[] args) {
+		
 		/*
 		 * A. create object of ProductDatabase
 		 * B. Write a menu driven program that displays menu as follows:
@@ -31,6 +32,9 @@ public class MainEntry {
 		 * 	5. Display all products by brands
 		 * 		ask the user to enter the brand and display all the products by brand 
 		 */
+		
+
+		
 		ProductDatabase database = new ProductDatabase();
 		Scanner sc = new Scanner(System.in);
 		Product products[];
@@ -65,8 +69,9 @@ public class MainEntry {
 			break;
 			
 		}
-		
-
+	
 	}
 
 }
+
+
