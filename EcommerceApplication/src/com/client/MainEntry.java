@@ -2,7 +2,7 @@ package com.client;
 
 import java.util.Scanner;
 
-import com.datasource.ProductDatabase;
+import com.datasource.ProductArrayDatabase;
 import com.entities.Product;
 
 public class MainEntry {
@@ -35,7 +35,7 @@ public class MainEntry {
 		
 
 		
-		ProductDatabase database = new ProductDatabase();
+		ProductArrayDatabase database = new ProductArrayDatabase();
 		Scanner sc = new Scanner(System.in);
 		Product products[];
 		System.out.println("Choose one of the option:-");

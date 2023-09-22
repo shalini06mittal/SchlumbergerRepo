@@ -3,12 +3,12 @@ package com.datasource;
 import com.entities.Brand;
 import com.entities.Product;
 
-public class ProductDatabase {
+public class ProductArrayDatabase {
 
 	// array of objects
 	private Product products [] = new Product[5];
 	
-	public ProductDatabase() {
+	public ProductArrayDatabase() {
 		Brand b1 = new Brand(1, "Apple");
 		Brand b2 = new Brand(3, "Windows");
 		products[0] = new Product("P001", "MAC laptop", "New version with more space", 123908, b1);
