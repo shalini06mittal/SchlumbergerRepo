@@ -29,13 +29,11 @@ public class Main {
 	{
 		obj.withdraw(amt);
 		// downcast
-		if(obj instanceof SavingsAccount)
-		{
+		if(obj instanceof SavingsAccount){
 			// obj = new BA() obj = new CA()
 			SavingsAccount s = (SavingsAccount)obj;
 			System.out.println(s.getInterest());
 		}
-
 	}
 	public static void main(String[] args) {
 		BankAccount b1  = new BankAccount("A001",1000);

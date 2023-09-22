@@ -10,11 +10,12 @@ package interfaces;
  * 7. The implementation class should provide the implementations of all the abstract methods 
  * 8. interface can extends other interface
  */
-public interface Convert {
+public interface Convert extends ConvertJSON, ConvertXML {
 
 	int x = 10;
-	String convertToJSON();
-	String convertToXML();
+//	String convertToJSON();
+//	String convertToXML();
+	String converToBinary();
 }
 
 interface ConvertJSON{
@@ -26,14 +27,23 @@ interface ConvertXML{
 }
 
 class A implements Convert{
+
 	@Override
 	public String convertToJSON() {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 	@Override
 	public String convertToXML() {
 		// TODO Auto-generated method stub
 		return null;
-	}	
+	}
+
+	@Override
+	public String converToBinary() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 }
