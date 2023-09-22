@@ -31,4 +31,38 @@ public class CustomerDatabase {
 		}
 		return null;
 	}
+	public Customer getCustomerByEmail(String email) {
+		for(Customer c : customers)
+		{
+			if(c.getEmail().equals(email))
+				return c;
+		}
+		return null;
+	}
+	public boolean updateCustomer(String email, String firstname, String lastname) {
+		for(int i=0;i<customers.size();i++)
+		{
+			Customer customer = customers.get(i);
+			if(customer.getEmail().equals(email)) {
+				customer.setFristname(firstname);
+				customer.setLastname(lastname);
+				customers.set(i, customer);
+				return true;
+			}
+		}
+		return false;
+	}
+	public boolean deleteCustomer(String email) {
+		
+		for(int i=0;i<customers.size();i++)
+		{
+			Customer customer = customers.get(i);
+			if(customer.getEmail().equals(email)) {
+				customers.remove(customer);
+				return true;
+			}
+		}
+		return false;
+	}
+	
 }

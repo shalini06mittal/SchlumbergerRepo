@@ -19,17 +19,17 @@ public class CustomerEntry {
 		 * 3. if existing ask the user to login => validateCsutomer() of LoginService
 		 * 4. To view all customers
 		 */
-		
 
 		String email, password;
-		System.out.println("0.Exit\n1. Login\n2. Register\n3.View All");
-		int choice = sc.nextInt();
+
 		boolean exit = false;
 		while(!exit) {
+			System.out.println("0.Exit\n1. Login\n2. Register\n3.View All Prodcuts");
+			int choice = sc.nextInt();
 			switch(choice) {
 			case 0:
 				System.out.println("Thanks for visiting!!");
-				exit = true;
+				exit = true; // close the browser tab
 				break;
 			case 1:
 				loginUser();
@@ -54,7 +54,9 @@ public class CustomerEntry {
 					System.out.println("Registered successfully, Please login");
 					loginUser();
 				}
-
+				else
+					System.out.println("Something went wrong , please try again later or contact admin!!");
+				break;
 			}
 		}
 
@@ -73,10 +75,79 @@ public class CustomerEntry {
 			System.out.println("Invalid credentials");
 		}
 	}
+//	public static void showDashboard(String email){
+//
+//		boolean isLoggedIn = true;
+//		while(isLoggedIn) {
+//			System.out.println("\n================================================");
+//			System.out.println("dashboard");
+//			System.out.println("0.Logout\n1. View Profile\n2.Edit Profile\n3.Invoice\n4. Purchase Products");
+//
+//			int choice = sc.nextInt();
+//			switch(choice) {
+//			case 0: System.out.println("Logging out...");
+//			isLoggedIn = false;
+//			break;
+//			case 1: 
+//				// call getCustomerByEmail and display customer details
+//				System.out.println("Customer Profile");
+//				break;
+//			case 2:
+//				System.out.println("Edit profile");
+//				// ask for firstname and lastname and edit
+//				break;
+//			case 3:
+//				// do not complete this
+//				System.out.println("Invoices will come here");
+//				break;
+//			case 4:
+//				// display list of all products and ask to enter product id to purchase
+//				// continue till user shops then display the total
+//				break;
+//
+//			}
+//
+//		}
+//		System.out.println("\n================================================");
+//
+//	}
+	
 	public static void showDashboard(String email){
 
-		System.out.println("0.Logout\n1. View Profile\n2.Edit Profile\n3.");
+		boolean isLoggedIn = true;
+		while(isLoggedIn) {
+			System.out.println("\n================================================");
+			System.out.println("dashboard");
+			System.out.println("0.Logout\n1. View Profile\n2.Edit Profile\n3.Delete Profile\n4. Purchase Products");
+
+			int choice = sc.nextInt();
+			switch(choice) {
+			case 0: System.out.println("Logging out...");
+			isLoggedIn = false;
+			break;
+			case 1: 
+				// call getCustomerByEmail and display customer details
+				System.out.println("Customer Profile");
+				break;
+			case 2:
+				System.out.println("Edit profile");
+				// ask for firstname and lastname and edit
+				break;
+			case 3:
+				System.out.println("Are you sure you want to delete");
+				// if delete succesfful then set isLoggedIn = false; 
+				break;
+			case 4:
+				// purchase products
+				// choose product id, enter qty
+				// calculate total to pay
+				break;
+			}
+		}
+		System.out.println("\n================================================");
+
 	}
+
 
 
 }
