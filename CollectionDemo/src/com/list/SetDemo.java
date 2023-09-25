@@ -1,6 +1,7 @@
 package com.list;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
@@ -59,9 +60,32 @@ public class SetDemo {
 		cities1.add("Agra");
 		System.out.println(cities1);
 		System.out.println();
-		Consumer<String> consumer = new ConsumerImpl();
+		// functional programming => who is doing is not important
+		// Anonymous inner class
+		//Consumer<String> consumer = new ConsumerImpl();
 		
+		Consumer<String> consumer = new Consumer<String>(){
+				@Override
+				public void accept(String t) {
+					System.out.println(t.toLowerCase());	
+				}
+			};
+			
 		cities1.forEach(consumer);
+		
+		List<String> colors= Arrays.asList("Red","green","blue","yellow");
+		colors.forEach(new Consumer<String>() {
+
+			@Override
+			public void accept(String color) {
+				System.out.println(color);
+				
+			}
+		});
+		// lambda expressions
+		colors.forEach((String color) -> {
+				System.out.println(color);
+				});
 		
 	}
 }
