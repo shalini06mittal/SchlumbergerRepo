@@ -29,7 +29,6 @@ public class ListEmployee {
 		System.out.println();
 		emps.forEach(emp -> System.out.println(emp));
 		
-		
 	}
 
 }
