@@ -84,8 +84,7 @@ public class SetDemo {
 		});
 		// lambda expressions
 		colors.forEach((String color) -> {
-				System.out.println(color);
-				});
+				System.out.println(color);});
 		
 	}
 }
