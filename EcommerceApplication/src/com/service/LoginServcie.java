@@ -4,6 +4,7 @@ import com.datasource.CustomerDatabase;
 
 public class LoginServcie {
 
+	// has-a
 	private CustomerDatabase customerDatabase;
 	
 	public LoginServcie(CustomerDatabase customerDatabase) {
