@@ -35,11 +35,5 @@ public class CompareList {
 //		);
 		Collections.sort(nos, (Integer o1, Integer o2)-> o2.compareTo(o1));
 		System.out.println(nos);
-		
-		
-		
-		
-		
 	}
-
 }
