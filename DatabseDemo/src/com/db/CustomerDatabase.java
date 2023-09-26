@@ -9,13 +9,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.entities.Customer;
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 
 
 public class CustomerDatabase {
 
 	private static Connection connection = DBConnection.connect();
 
-	public boolean insertCustomer(Customer customer) {
+	public boolean insertCustomer(Customer customer) throws MySQLIntegrityConstraintViolationException {
 		// Ref of Statement
 		try {
 //			Statement stat = connection.createStatement();
@@ -42,8 +43,8 @@ public class CustomerDatabase {
 			stat.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
+			//e.printStackTrace();
+			throw new MySQLIntegrityConstraintViolationException("Email with that id already exists"); 
 		}
 		return true;
 
