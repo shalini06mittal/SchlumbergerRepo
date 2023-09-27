@@ -8,12 +8,23 @@
 </head>
 <body>
 	<h1>hello</h1>
+	<%
+		String email = (String)session.getAttribute("email");
+		if(email == null){
+	%>
 	<div>
 		<a href='login.jsp'>Login</a>
 	</div>
 	<div>
 		<a href='register.jsp'>Register</a>
 	</div>
+	<% 
+	}else{
+	%>
+	<div>
+		<a href='logout'>Logout</a>
+	</div>
+	<%} %>
 	<!-- http://localhost:8080/ServletDemo/index.jsp
  -->
 </body>

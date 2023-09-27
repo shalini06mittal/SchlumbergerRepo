@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet Filter implementation class LogFilter
  */
-@WebFilter({"/dashboard", "/profile", "/login"})
+//@WebFilter({"/dashboard", "/profile", "/login"})
 public class LogFilter extends HttpFilter implements Filter {
        
     /**
@@ -43,7 +43,7 @@ public class LogFilter extends HttpFilter implements Filter {
 		System.out.println("Log Filter before do filter chain "+req.getContextPath());
 		System.out.println("Email "+req.getParameter("email"));
 		String email = req.getParameter("email");
-		if( ! email.endsWith("slb.com"))
+		if( ! email.endsWith("gmail.com"))
 		{
 			resp.sendRedirect("login.jsp?error=invalid");
 			

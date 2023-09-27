@@ -3,11 +3,16 @@ package com.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import com.db.CustomerDatabase;
+import com.entities.Customer;
 
 /**
  * Servlet implementation class DashBoardServlet
@@ -36,12 +41,29 @@ public class ProfileServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// if i am logged in
-		System.out.println("do get dashboard");
-		String email = request.getParameter("email");
-		PrintWriter out = response.getWriter();
-		response.setContentType("text/html");
-		out.print("<h1>Response from GET- DASHBOARD</h1>");
-		out.print("<p>Welcome "+email+"</h1>");
+		HttpSession session = request.getSession();
+		String email = (String)session.getAttribute("email");
+		CustomerDatabase db = new CustomerDatabase();
+		try {
+			Customer customer = db.getCustomerByEmail(email);
+			RequestDispatcher dispatcher = request.getRequestDispatcher("profile.jsp");
+			request.setAttribute("customer", customer);
+			dispatcher.forward(request, response);
+//			PrintWriter out = response.getWriter();
+//			response.setContentType("text/html");
+//			out.println("<p><a href='dashboard'>Dashboard</a>&nbsp;&nbsp;"
+//					+ "<a href='invoices'>Invoices</a>&nbsp;&nbsp"
+//					+ "<a href='logout'>Logout</a></p>");
+//			out.print("<h1>Response from GET- PROFILE</h1>");
+//			out.print("<p>Welcome "+email+"</h1>");
+//			out.print("<p>Welcome profile here</h1>");
+//			out.println(customer);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//String email = request.getParameter("email");
+		
 	}
 
 	

@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class DashBoardServlet
@@ -39,11 +40,17 @@ public class DashBoardServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("do get dashboard");
 		// if i am logged in
-		String email = request.getParameter("email");
+		HttpSession session = request.getSession();
+		String email = (String)session.getAttribute("email");
+		//String email = request.getParameter("email");
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
+		out.println("<p><a href='profile'>Profile</a>&nbsp;&nbsp;"
+				+ "<a href='invoices'>Invoices</a>&nbsp;&nbsp"
+				+ "<a href='logout'>Logout</a></p>");
 		out.print("<h1>Response from GET- DASHBOARD</h1>");
 		out.print("<p>Welcome "+email+"</h1>");
+		
 	}
 
 	/**

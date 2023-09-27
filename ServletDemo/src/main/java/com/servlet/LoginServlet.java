@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.db.CustomerDatabase;
 
@@ -63,10 +64,13 @@ public class LoginServlet extends HttpServlet {
 			String pwd = db.findCustomerByEmail(email);
 			System.out.println("pwd "+pwd);
 			if(password.equals(pwd)) {
+				HttpSession session = request.getSession();
+				session.setAttribute("email", email);
 //				RequestDispatcher dispatcher = request.getRequestDispatcher("/dashboard");
 //				dispatcher.forward(request, response);
 				//URL Rewriting
-				response.sendRedirect("dashboard?email="+email);
+//				response.sendRedirect("dashboard?email="+email);
+				response.sendRedirect("dashboard");
 			}
 			else
 				response.sendRedirect("login.jsp?error=password");
