@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.db.CustomerDatabase;
+
 /**
  * IOC = inversion of control
  * Servlet implementation class LoginServlet
@@ -36,7 +38,7 @@ public class LoginServlet extends HttpServlet {
 
 	@Override
 	public void destroy() {
-		System.out.println("destrou of login servlet");
+		System.out.println("destroy of login servlet");
 	}
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -45,7 +47,6 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("do get called");
 		response.sendRedirect("login.jsp");
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -55,21 +56,19 @@ public class LoginServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
-		if(email.equals("admin")) {
-			if(password.equals("admin")) {
+
+		CustomerDatabase db = new CustomerDatabase();
+		try {
+			String pwd = db.findCustomerByEmail(email);
+			System.out.println("pwd "+pwd);
+			if(password.equals(pwd)) {
 				out.print("<h1>Response from post</h1>");
 				out.print("<p>Welcome "+email+" Your password is : "+ password +"</h1>");
 			}
-			else {
-				// invalid credentials
+			else
 				response.sendRedirect("login.jsp?error=password");
-			}
-
-		}
-		else {
-			// User deos not exist with that email , Please register
+		} catch (Exception e) {
 			response.sendRedirect("login.jsp?error=email");
 		}
 	}
-
 }
