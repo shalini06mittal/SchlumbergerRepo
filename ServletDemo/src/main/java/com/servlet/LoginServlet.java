@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
+ * IOC = inversion of control
  * Servlet implementation class LoginServlet
  */
 @WebServlet("/login")
@@ -23,14 +24,19 @@ public class LoginServlet extends HttpServlet {
        System.out.println("Login Servlet Constructor");
     }
 
+    @Override
+    public void destroy() {
+    	System.out.println("destrou of login servlet");
+    }
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("do get called");
+		
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		
+
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		out.print("<h1>Response from get</h1>");
@@ -42,9 +48,12 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("do post called");
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");
 		out.print("<h1>Response from post</h1>");
+		out.print("<p>Welcome "+email+" Your password is : "+ password +"</h1>");
 	}
 
 }

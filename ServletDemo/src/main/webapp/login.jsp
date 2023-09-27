@@ -10,8 +10,14 @@
 	<h3>
 		<a href='index.jsp'>Home Page</a>
 	</h3>
-	<h1>Please Login</h1>
+	<h1>Please Login - GET Sample</h1>
 	<form action="login" method="GET">
+		<div>Email : <input type='text' name="email" /></div>
+		<div>Password : <input type='password' name="password"/></div>
+		<div><input type='submit'/></div>
+	</form>
+	<h1>Please Login - POST Sample</h1>
+	<form action="login" method="POST">
 		<div>Email : <input type='text' name="email" /></div>
 		<div>Password : <input type='password' name="password"/></div>
 		<div><input type='submit'/></div>
