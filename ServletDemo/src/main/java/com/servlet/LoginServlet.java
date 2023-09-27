@@ -3,6 +3,7 @@ package com.servlet;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -62,8 +63,10 @@ public class LoginServlet extends HttpServlet {
 			String pwd = db.findCustomerByEmail(email);
 			System.out.println("pwd "+pwd);
 			if(password.equals(pwd)) {
-				out.print("<h1>Response from post</h1>");
-				out.print("<p>Welcome "+email+" Your password is : "+ password +"</h1>");
+//				RequestDispatcher dispatcher = request.getRequestDispatcher("/dashboard");
+//				dispatcher.forward(request, response);
+				//URL Rewriting
+				response.sendRedirect("dashboard?email="+email);
 			}
 			else
 				response.sendRedirect("login.jsp?error=password");
