@@ -11,6 +11,15 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * Servlet implementation class DashBoardServlet
+ * 
+ * images => compression
+ * password => encrypt
+ * authentication => 100 servlets
+ * S1 S2 ... S100 =>  authentication/ authorization..
+ * Filters => interrupt the req and the response
+ * logging..
+ * 
+ * 
  */
 @WebServlet("/dashboard")
 public class DashBoardServlet extends HttpServlet {
@@ -29,6 +38,7 @@ public class DashBoardServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("do get dashboard");
+		// if i am logged in
 		String email = request.getParameter("email");
 		PrintWriter out = response.getWriter();
 		response.setContentType("text/html");

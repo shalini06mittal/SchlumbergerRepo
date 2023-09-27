@@ -48,6 +48,11 @@
 	<p>Invalid Credentials</p>
 	<%
 	}
+	if (error.equals("invalid")) {
+	%>
+	<p>Email should end with gmail.com
+	<%
+	}
 	}
 	%>
 	<h1>Please Login - POST Sample</h1>
