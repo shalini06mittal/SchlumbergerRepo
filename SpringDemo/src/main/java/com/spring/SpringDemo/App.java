@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import com.payment.PaymentProject.PaymentService;
 import com.spring.SpringDemo.basic01.MyService;
 import com.spring.SpringDemo.basic01.SmsNotifications;
+import com.spring.SpringDemo.database.CustomerDatabase;
 import com.spring.SpringDemo.scope.Employee;
 
 //there are spring specific configurations in this project
@@ -50,6 +51,9 @@ public class App
         System.out.println(emp1.hashCode());
         System.out.println(emp2); // id and name
         
+        System.out.println();
+        CustomerDatabase db = context.getBean(CustomerDatabase.class);
+        System.out.println("Total count "+db.getCustomerCount());
         
     }
     @Bean // spring managed bean
