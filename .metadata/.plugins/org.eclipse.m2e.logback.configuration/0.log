@@ -987,3 +987,23 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact com.payment:P
 2023-09-29 16:39:26,532 [Worker-83: Launching App] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/PaymentProject: com.payment:PaymentProject:0.0.1-SNAPSHOT with classifier null to /PaymentProject/target/classes
 2023-09-29 16:39:26,544 [Worker-83: Launching App] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/PaymentProject: com.payment:PaymentProject:0.0.1-SNAPSHOT with classifier null to /PaymentProject/target/classes
 2023-09-29 16:39:26,551 [Worker-83: Launching App] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/PaymentProject: com.payment:PaymentProject:0.0.1-SNAPSHOT with classifier null to /PaymentProject/target/classes
+2023-09-29 17:20:01,395 [Worker-103: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-29 17:20:01,396 [Worker-103: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Shalini/Desktop/SchlumbergerSpringWS/SpringDemo/src/main/resources
+2023-09-29 17:20:01,399 [Worker-103: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-29 17:20:01,400 [Worker-103: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Shalini/Desktop/SchlumbergerSpringWS/SpringDemo/src/test/resources
+2023-09-29 17:20:10,144 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-29 17:20:10,145 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Shalini/Desktop/SchlumbergerSpringWS/SpringDemo/src/main/resources
+2023-09-29 17:20:10,147 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-29 17:20:10,147 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Shalini/Desktop/SchlumbergerSpringWS/SpringDemo/src/test/resources
+2023-09-29 17:20:13,765 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-29 17:20:13,766 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Shalini/Desktop/SchlumbergerSpringWS/SpringDemo/src/main/resources
+2023-09-29 17:20:13,767 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-29 17:20:13,767 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Shalini/Desktop/SchlumbergerSpringWS/SpringDemo/src/test/resources
+2023-09-29 17:20:21,034 [Worker-103: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-29 17:20:21,039 [Worker-103: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Shalini/Desktop/SchlumbergerSpringWS/SpringDemo/src/main/resources
+2023-09-29 17:20:21,042 [Worker-103: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-29 17:20:21,042 [Worker-103: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Shalini/Desktop/SchlumbergerSpringWS/SpringDemo/src/test/resources
+2023-09-29 17:20:28,204 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-29 17:20:28,205 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Shalini/Desktop/SchlumbergerSpringWS/SpringDemo/src/main/resources
+2023-09-29 17:20:28,206 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2023-09-29 17:20:28,206 [Worker-67: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/Shalini/Desktop/SchlumbergerSpringWS/SpringDemo/src/test/resources
