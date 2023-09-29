@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import com.payment.PaymentProject.PaymentService;
 import com.spring.SpringDemo.basic01.MyService;
 import com.spring.SpringDemo.basic01.SmsNotifications;
+import com.spring.SpringDemo.scope.Employee;
 
 //there are spring specific configurations in this project
 @Configuration 
@@ -28,8 +29,27 @@ public class App
 //        for(String bean : context.getBeanDefinitionNames())
 //        	System.out.println(bean);
         
+        System.out.println("\nService");
         MyService service = context.getBean(MyService.class);
         service.generateBill();
+        
+        System.out.println("\n********************Scoping********************");
+        
+        // No matter how many times u ask spring to get the object of type employee ,
+        // it is the same instance
+        // singleton
+        Employee emp1 = context.getBean(Employee.class);
+        System.out.println(emp1.hashCode());
+        System.out.println(emp1); // id and name
+        emp1.setEname("Manisha");
+        System.out.println(emp1.getEname());
+       
+        System.out.println();
+        
+        Employee emp2 = context.getBean(Employee.class);
+        System.out.println(emp1.hashCode());
+        System.out.println(emp2); // id and name
+        
         
     }
     @Bean // spring managed bean
