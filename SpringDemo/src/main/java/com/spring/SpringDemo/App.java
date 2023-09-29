@@ -59,15 +59,31 @@ public class App
         
         System.out.println("\n******************** CUSTOMER SERVICE ********************");
         CustomerService customerService = context.getBean(CustomerService.class);
-        Customer customer = new Customer("ankit@gmail.com", "Ankit", "Kumar", "Chicago", "USA", "ankit", "34456454646");
-        System.out.println(customer.getEmail().isBlank());
+        Customer customer = new Customer("het@gmail.com", "Het", "Patel", "New York", "USA", "5656456567", "het");
+//        System.out.println(customer.getEmail().isBlank());
+//        try {
+//			System.out.println(customerService.addCustomer(customer));
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			System.out.println(e.getMessage());
+//		}
+        
         try {
-			System.out.println(customerService.addCustomer(customer));
+			System.out.println(customerService.findCustomerByEmail("ankit@gmail.com"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        try {
+			System.out.println(customerService.findCustomerByEmail("sapna@gmail.com"));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
 			System.out.println(e.getMessage());
 		}
-        
+        System.out.println();
+        for(Customer cust : customerService.getAllCustomers())
+        	System.out.println(cust);
     }
     @Bean // spring managed bean
     public PaymentService paymentService()
