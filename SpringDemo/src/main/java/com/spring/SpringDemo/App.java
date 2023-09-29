@@ -10,7 +10,9 @@ import com.payment.PaymentProject.PaymentService;
 import com.spring.SpringDemo.basic01.MyService;
 import com.spring.SpringDemo.basic01.SmsNotifications;
 import com.spring.SpringDemo.database.CustomerDatabase;
+import com.spring.SpringDemo.entities.Customer;
 import com.spring.SpringDemo.scope.Employee;
+import com.spring.SpringDemo.service.CustomerService;
 
 //there are spring specific configurations in this project
 @Configuration 
@@ -54,6 +56,17 @@ public class App
         System.out.println();
         CustomerDatabase db = context.getBean(CustomerDatabase.class);
         System.out.println("Total count "+db.getCustomerCount());
+        
+        System.out.println("\n******************** CUSTOMER SERVICE ********************");
+        CustomerService customerService = context.getBean(CustomerService.class);
+        Customer customer = new Customer("ankit@gmail.com", "Ankit", "Kumar", "Chicago", "USA", "ankit", "34456454646");
+        System.out.println(customer.getEmail().isBlank());
+        try {
+			System.out.println(customerService.addCustomer(customer));
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
         
     }
     @Bean // spring managed bean
