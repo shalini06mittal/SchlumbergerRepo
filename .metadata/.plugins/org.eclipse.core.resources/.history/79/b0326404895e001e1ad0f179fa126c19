@@ -1,0 +1,14 @@
+package com.demo;
+
+public class MyService {
+
+	private Notifications notification = new SmsNotifications();
+	
+	public void generateBill()
+	{
+		// payment service
+		System.out.println("generating bill");
+		// notify the user with the mode they have chosen
+		notification.notifyUsers();
+	}
+}
