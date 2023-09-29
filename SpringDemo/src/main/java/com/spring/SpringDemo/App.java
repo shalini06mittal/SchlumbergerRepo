@@ -2,9 +2,11 @@ package com.spring.SpringDemo;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import com.payment.PaymentProject.PaymentService;
 import com.spring.SpringDemo.basic01.MyService;
 import com.spring.SpringDemo.basic01.SmsNotifications;
 
@@ -29,5 +31,11 @@ public class App
         MyService service = context.getBean(MyService.class);
         service.generateBill();
         
+    }
+    @Bean // spring managed bean
+    public PaymentService paymentService()
+    {
+    	System.out.println("payment service object...");
+    	return new PaymentService();
     }
 }
