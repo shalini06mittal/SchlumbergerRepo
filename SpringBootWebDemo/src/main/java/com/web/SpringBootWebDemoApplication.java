@@ -2,7 +2,7 @@ package com.web;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+// SpringBootConfiguration, EnableAutoCOnfiguration, ComponentScan
 @SpringBootApplication
 public class SpringBootWebDemoApplication {
 
