@@ -7,6 +7,7 @@ import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,8 +22,12 @@ public class HomeController {
 	private CustomerService customerService;
 
 	@GetMapping("/login")
-	public String loginPage(Map<String, List<String>> map)
+	public String loginPage(Map<String, List<String>> map,
+			Map<String, String> mapError,
+			@RequestParam(required = false) String error)
 	{
+		if(error != null)
+			mapError.put("error", error);
 		System.out.println("login page get called");
 		List<String> roles = Arrays.asList(
 				"ADMIN", "MANAGER", "DEVELOPER");
@@ -57,7 +62,15 @@ public class HomeController {
 		System.out.println(email);
 		System.out.println(password);
 		System.out.println(role);
-		return "dashboard";
+		try {
+			this.customerService.validateCustomer(email, password);
+			return "redirect:dashboard";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return "redirect:login?error="+e.getMessage();
+		}
+		
 	}
 	@PostMapping("/register")
 	public String registerCustomer(Customer customer)

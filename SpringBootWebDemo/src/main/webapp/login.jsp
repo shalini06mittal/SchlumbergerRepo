@@ -8,13 +8,21 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<style type="text/css">
+	.error{
+	color:red;
+	}
+</style>
 </head>
 <body>
 
 	<h1>Please Login</h1>
+	<c:if test="${error != null}">
+		<p class='error'>${error }</p>
+	</c:if>
 	<form action="login" method="POST">
 		<div>
-			Email : <input type='text' name="email1" />
+			Email : <input type='text' name="email" />
 		</div>
 		<div>
 			Password : <input type='password' name="password" />
