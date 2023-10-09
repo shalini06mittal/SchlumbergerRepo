@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -57,13 +59,14 @@ public class HomeController {
 	@PostMapping("/login")
 	public String loginCustomer(@RequestParam String email, 
 			@RequestParam String password,
-			@RequestParam String role)
+			@RequestParam String role, HttpSession session)
 	{
 		System.out.println(email);
 		System.out.println(password);
 		System.out.println(role);
 		try {
 			this.customerService.validateCustomer(email, password);
+			session.setAttribute("email", email);
 			return "redirect:dashboard";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -24,6 +24,11 @@ public class CustomerService {
 		
 		throw new EntityExistsException("Customer with "+email+" already exists");
 	}
+	
+	public Customer getCustomerByEmail(String email) {
+		return this.customerRepo.findById(email).get();
+	}
+	
 	public boolean validateCustomer(String email, String password) throws Exception {
 		if(this.customerRepo.existsById(email)) {
 			Customer customer = customerRepo.findById(email).get();
