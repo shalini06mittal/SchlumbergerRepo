@@ -11,29 +11,30 @@ import org.springframework.web.bind.annotation.RestController;
 
 // @Controller + @ResponseBody
 @RestController
+@RequestMapping("/api")
 public class HelloRestController {	
 	// general annotation
-	@RequestMapping("/all")
-	public String AllData(HttpServletRequest request){
-		System.out.println(request.getMethod());
-		return "ALL";
-	}
-	@GetMapping("/get")
+//	@RequestMapping("/all")
+//	public String AllData(HttpServletRequest request){
+//		System.out.println(request.getMethod());
+//		return "ALL";
+//	}
+	@GetMapping
 	public String getData(){
 		// fetch
-		return "GET";
+		return "GET!!";
 	}
-	@PostMapping("/post")
+	@PostMapping
 	public String postData(){
 		// insert
 		return "POST";
 	}
-	@PutMapping("/put")
+	@PutMapping
 	public String putData(){
 		/// update
 		return "PUT";
 	}
-	@DeleteMapping("/delete")
+	@DeleteMapping
 	public String deleteData(){
 		//delete
 		return "DELETE";
