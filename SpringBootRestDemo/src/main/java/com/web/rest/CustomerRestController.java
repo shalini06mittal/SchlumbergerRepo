@@ -27,8 +27,11 @@ import org.springframework.web.bind.annotation.RestController;
 import com.web.entities.Customer;
 import com.web.service.CustomerService;
 
+import io.swagger.v3.oas.annotations.tags.Tag;
+
 @RestController
 @RequestMapping("/customers")
+@Tag(name = "Customer", description = "Manage customers")
 public class CustomerRestController {
 
 

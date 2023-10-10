@@ -63,6 +63,14 @@
 			<groupId>com.fasterxml.jackson.dataformat</groupId>			
 			<artifactId>jackson-dataformat-xml</artifactId>			
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui -->
+		<dependency> 
+			<groupId>org.springdoc</groupId> 
+			<artifactId>springdoc-openapi-ui</artifactId> 
+			<version>1.6.15</version> 
+			</dependency>
+
+
 
 	</dependencies>
 

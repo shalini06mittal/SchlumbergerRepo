@@ -8,6 +8,11 @@ import org.springframework.context.annotation.Bean;
 import com.web.entities.Customer;
 import com.web.repo.CustomerRepo;
 
+import io.swagger.v3.oas.models.OpenAPI;
+import io.swagger.v3.oas.models.info.Contact;
+import io.swagger.v3.oas.models.info.Info;
+import io.swagger.v3.oas.models.info.License;
+
 @SpringBootApplication
 public class SpringBootRestDemoApplication {
 
@@ -29,6 +34,23 @@ public class SpringBootRestDemoApplication {
 		customerRepo.save(c2);
 		customerRepo.save(c3);
 		customerRepo.save(c4);
+	}
+	
+	@Bean
+	OpenAPI custom()
+	{
+		return new OpenAPI()
+				.info(new Info()
+						.title("Customer Management System")
+						.contact(new Contact()
+								.email("dummy@dummy.com")
+								.name("SLB")
+								.url("http://www.google.com")
+								)
+						.description("Documnetation for CMS for anyone to consume hte services")
+						.license(new License().name("DUMMY"))
+						.termsOfService("Terms")
+						);
 	}
 
 }
