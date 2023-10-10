@@ -25,8 +25,12 @@ public class CustomerService {
 		return this.customerRepo.findByCity(city);
 	}
 	
-	public String insertCustomer(Customer customer) {
+	public String insertCustomer(Customer customer) throws Exception {
 		String email = customer.getEmail();
+		if(email == null)
+		{
+			throw new Exception("Please provide email id");
+		}
 		if(! customerRepo.existsById(email)) 
 			return this.customerRepo.save(customer).getEmail();
 		

@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,10 +19,10 @@ import com.web.service.CustomerService;
 @RequestMapping("/customers")
 public class CustomerRestController {
 
-	
+
 	@Autowired
 	private CustomerService customerService;
-	
+
 	@GetMapping
 	public List<Customer> getCustomer()
 	{
@@ -35,10 +36,22 @@ public class CustomerRestController {
 		return this.customerService.getCustomerByEmail(email);
 	}
 	@PostMapping
-	public List<Customer> addCustomer()
+	public String addCustomer(@RequestBody Customer customer)
 	{
-		return this.customerService.getAllCustomers(null);
+		System.out.println("POST REQUEST");
+		System.out.println(customer);
+		String email;
+		try {
+			email = this.customerService.insertCustomer(customer);
+			return email+" - Registration successful";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			//e.printStackTrace();
+			return e.getMessage();
+		}
+		
 	}
+
 	@PutMapping
 	public List<Customer> updateCustomer()
 	{
