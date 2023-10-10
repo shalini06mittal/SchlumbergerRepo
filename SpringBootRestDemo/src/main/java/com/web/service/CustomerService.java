@@ -41,7 +41,7 @@ public class CustomerService {
 		if( customerRepo.existsById(email)) 
 			return this.customerRepo.save(customer);
 		
-		throw new EntityExistsException("Customer with "+email+" does not exists");
+		throw new EntityNotFoundException("Customer with "+email+" does not exists");
 	}
 	
 	public Customer getCustomerByEmail(String email) {
